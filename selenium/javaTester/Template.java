@@ -1,17 +1,39 @@
 package webdriver;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class Template {
+	
 	WebDriver driver;
+	Actions action;
+	WebDriverWait expliciWait;
+	JavascriptExecutor jsExecutor;
+	long timeinsecond = 2;
+	
 	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
 	
@@ -41,6 +63,15 @@ public class Template {
 	@AfterClass
 	static void afterClass() throws Exception {
 	
+	}
+	
+	public void sleepinSeconds(long timeoutinsecond) {
+		try {
+			Thread.sleep(timeoutinsecond*1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
 	
